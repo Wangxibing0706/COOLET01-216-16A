@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COOLET01-216 · 点位对照</title>
+<style>
+  :root{
+    --bg:#f4f7fb; --card:#fff; --line:#dbe4ef; --txt:#1b2b3a;
+    --txt2:#5b6e80; --red:#e23b32; --blue:#1565c0; --amber:#f57c00;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+       font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;line-height:1.6}
+  .wrap{max-width:1500px;margin:0 auto;padding:28px 24px 60px}
+  header{margin-bottom:22px}
+  h1{font-size:28px;margin:0 0 6px}
+  .sub{color:var(--txt2);font-size:15px}
+  .notice{background:#fff8e1;border:1px solid #ffe0a3;border-radius:10px;
+          padding:12px 16px;margin:18px 0 26px;font-size:14px;color:#7a5300}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;
+          padding:22px;margin-bottom:26px;box-shadow:0 1px 3px rgba(20,40,70,.04)}
+  h2{font-size:21px;margin:0 0 4px}
+  .hint{color:var(--txt2);font-size:14px;margin-bottom:14px}
+  .tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+  button{font:inherit;font-size:14px;padding:7px 16px;border-radius:8px;cursor:pointer;
+         border:1px solid var(--line);background:#fff;color:var(--txt2)}
+  button.on{background:var(--red);border-color:var(--red);color:#fff}
+  .view{display:none;gap:14px;flex-wrap:wrap}
+  .view.on{display:flex}
+  .view figure{margin:0;flex:1 1 460px;min-width:320px}
+  .view img{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;display:block}
+  figcaption{font-size:13px;color:var(--txt2);margin-top:6px;text-align:center}
+  table{border-collapse:collapse;width:100%;font-size:14px;margin-top:8px}
+  th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+  th{background:#eef3f9;color:var(--txt2);font-weight:600}
+  tbody tr:nth-child(even){background:#fafbfd}
+  .num{display:inline-flex;align-items:center;justify-content:center;
+       width:24px;height:24px;border-radius:50%;background:var(--red);color:#fff;
+       font-size:13px;font-weight:700;flex:none}
+  .num.b{background:var(--blue)}
+  .num.o{background:var(--amber)}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+  @media(max-width:900px){.cols{grid-template-columns:1fr}}
+  .notes{background:#f7f9fc;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;
+         padding:12px 16px;font-size:14px;color:var(--txt2);margin-top:14px}
+  .notes b{color:var(--txt)}
+  .tag{display:inline-block;padding:1px 8px;border-radius:5px;font-size:12px;
+       background:#e8f1fd;color:var(--blue);margin-right:6px}
+  .tag.warn{background:#fff2e0;color:var(--amber)}
+  svg{width:100%;height:auto;background:#fbfcfe;border:1px solid var(--line);border-radius:8px}
+  .small{font-size:13px;color:var(--txt2);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>COOLET01-216 智能插座 · 点位对照</h1>
+  <div class="sub">依据网页 <code>HowToLoveChina/COOLET01</code> 的 README 定义，在实拍照片上标注点位 · 北京国电通网络技术有限公司</div>
+</header>
+
+<div class="notice">
+  <b>原图保留：</b>两张原始 JPG 均未被修改，标注内容另存为
+  <code>ESP8266EX模块天线向上_点位标注.png</code> 与
+  <code>外接双排11焊点定义_点位标注.png</code>。
+  下方「原图 / 标注图 / 并排」可直接切换查看。
+</div>
+
+<!-- ============ 模块图 ============ -->
+<section>
+  <h2>一、ESP8266EX 模块外接点位（10 点）</h2>
+  <div class="hint">面对模块、天线向上、插口在左；自上向下、自左向右编号 1~10。</div>
+  <div class="tabs" data-group="m">
+    <button class="on" data-v="mOrig">原图</button>
+    <button data-v="mMark">标注图</button>
+    <button data-v="mBoth">并排</button>
+  </div>
+  <div class="view on" id="mOrig"><figure>
+    <img src="ESP8266EX模块天线向上.jpg" alt="ESP8266EX 模块天线向上 原图">
+    <figcaption>原图 · ESP8266EX模块天线向上.jpg（未修改）</figcaption>
+  </figure></div>
+  <div class="view" id="mMark"><figure>
+    <img src="ESP8266EX模块天线向上_点位标注.png" alt="模块点位标注图">
+    <figcaption>标注图 · 黄色圈为实测焊盘，橙色虚线圈为推定位置</figcaption>
+  </figure></div>
+  <div class="view" id="mBoth">
+    <figure><img src="ESP8266EX模块天线向上.jpg" alt="原图"><figcaption>原图</figcaption></figure>
+    <figure><img src="ESP8266EX模块天线向上_点位标注.png" alt="标注图"><figcaption>标注图</figcaption></figure>
+  </div>
+
+  <div class="cols">
+    <div>
+      <table>
+        <thead><tr><th>编号</th><th>位置</th><th>说明（网页原文）</th></tr></thead>
+        <tbody>
+          <tr><td><span class="num">1</span></td><td>左上1</td><td>VCC 供电</td></tr>
+          <tr><td><span class="num o">2</span></td><td>靠1</td><td>板上LED &nbsp;PIN12, GPIO13</td></tr>
+          <tr><td><span class="num">3</span></td><td>上中</td><td>TOUT &nbsp;PIN6</td></tr>
+          <tr><td><span class="num">4</span></td><td>上右</td><td>RSTB &nbsp;PIN32</td></tr>
+          <tr><td><span class="num">5</span></td><td>左2</td><td>GPIO02, PIN14</td></tr>
+          <tr><td><span class="num">6</span></td><td>左3</td><td>GPIO00, PIN15</td></tr>
+          <tr><td><span class="num">7</span></td><td>左下1</td><td>GPIO04, PIN16</td></tr>
+          <tr><td><span class="num">8</span></td><td>下2</td><td>GND</td></tr>
+          <tr><td><span class="num">9</span></td><td>下3</td><td>U0RXD, PIN25</td></tr>
+          <tr><td><span class="num">10</span></td><td>下4</td><td>U0TXD, PIN26</td></tr>
+        </tbody>
+      </table>
+      <div class="notes">
+        <span class="tag warn">推定</span><b>2 号点</b>：照片里 1 号点附近没有独立的大圆形焊盘，
+        按网页「靠1 / 板上LED」的描述，标在 1 号点右侧 R10 端的小焊盘上；接线前建议万用表确认。<br>
+        <b>刷写</b>：VCC、GND、U0RXD、U0TXD 接串口，GPIO0 接地可刷写；
+        <b>RSTB 与 GPIO16 短接</b>才能进入低功耗。
+      </div>
+    </div>
+    <div>
+      <svg viewBox="0 0 440 310" role="img" aria-label="模块 10 点位置示意">
+        <rect x="70" y="20" width="300" height="270" rx="10" fill="#15212b" stroke="#c99a3d" stroke-width="3"/>
+        <text x="220" y="50" fill="#8fa4b5" font-size="13" text-anchor="middle">↑ 天线端（向上）</text>
+        <text x="220" y="165" fill="#3c5162" font-size="13" text-anchor="middle">ESP8266EX</text>
+        <!-- 上排 -->
+        <g font-size="12" text-anchor="middle">
+          <circle cx="105" cy="95" r="15" fill="#e23b32"/><text x="105" y="99" fill="#fff">1</text>
+          <text x="105" y="78" fill="#fff">VCC</text>
+          <circle cx="165" cy="95" r="15" fill="#f57c00" stroke-dasharray="3 2"/><text x="165" y="99" fill="#fff">2</text>
+          <text x="165" y="78" fill="#ffd08a">LED</text>
+          <circle cx="255" cy="95" r="15" fill="#e23b32"/><text x="255" y="99" fill="#fff">3</text>
+          <text x="255" y="78" fill="#fff">TOUT</text>
+          <circle cx="335" cy="95" r="15" fill="#e23b32"/><text x="335" y="99" fill="#fff">4</text>
+          <text x="335" y="78" fill="#fff">RSTB</text>
+          <!-- 左列 -->
+          <circle cx="105" cy="165" r="15" fill="#e23b32"/><text x="105" y="169" fill="#fff">5</text>
+          <text x="105" y="192" fill="#fff">GPIO02</text>
+          <circle cx="105" cy="215" r="15" fill="#e23b32"/><text x="105" y="219" fill="#fff">6</text>
+          <text x="105" y="242" fill="#fff">GPIO00</text>
+          <circle cx="105" cy="260" r="15" fill="#e23b32"/><text x="105" y="264" fill="#fff">7</text>
+          <text x="105" y="283" fill="#fff">GPIO04</text>
+          <!-- 下排 -->
+          <circle cx="205" cy="260" r="15" fill="#e23b32"/><text x="205" y="264" fill="#fff">8</text>
+          <text x="205" y="240" fill="#fff">GND</text>
+          <circle cx="275" cy="260" r="15" fill="#e23b32"/><text x="275" y="264" fill="#fff">9</text>
+          <text x="275" y="240" fill="#fff">RX</text>
+          <circle cx="340" cy="260" r="15" fill="#e23b32"/><text x="340" y="264" fill="#fff">10</text>
+          <text x="340" y="240" fill="#fff">TX</text>
+        </g>
+        <text x="15" y="170" fill="#5b6e80" font-size="12" transform="rotate(-90 15 170)" text-anchor="middle">插口在左</text>
+      </svg>
+      <div class="small">位置示意（按网页「左上1 / 上中 / 上右 / 左2 / 左3 / 左下1 / 下2~下4」），非实际比例。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 双排焊点图 ============ -->
+<section>
+  <h2>二、外接双排 11 焊点</h2>
+  <div class="hint">信号列 7 点（1~7）+ 对侧电源列 4 点（VCC、VCC、GND、GND）= 11 个焊点。</div>
+  <div class="tabs" data-group="b">
+    <button class="on" data-v="bOrig">原图</button>
+    <button data-v="bMark">标注图</button>
+    <button data-v="bBoth">并排</button>
+  </div>
+  <div class="view on" id="bOrig"><figure>
+    <img src="外接双排11焊点定义.jpg" alt="外接双排11焊点 原图">
+    <figcaption>原图 · 外接双排11焊点定义.jpg（未修改）</figcaption>
+  </figure></div>
+  <div class="view" id="bMark"><figure>
+    <img src="外接双排11焊点定义_点位标注.png" alt="双排焊点标注图">
+    <figcaption>标注图 · 含 A 区 1.75× 放大插图</figcaption>
+  </figure></div>
+  <div class="view" id="bBoth">
+    <figure><img src="外接双排11焊点定义.jpg" alt="原图"><figcaption>原图</figcaption></figure>
+    <figure><img src="外接双排11焊点定义_点位标注.png" alt="标注图"><figcaption>标注图</figcaption></figure>
+  </div>
+
+  <div class="cols">
+    <div>
+      <table>
+        <thead><tr><th>位置</th><th>模组连接</th><th>插座连接</th><th>说明</th><th>对侧</th></tr></thead>
+        <tbody>
+          <tr><td><span class="num">1</span></td><td>GPIO14, PIN10</td><td>CF</td><td>计量脉冲</td><td>无</td></tr>
+          <tr><td><span class="num">2</span></td><td>GPIO15, PIN13</td><td>MOS</td><td>继电器吸合</td><td>无</td></tr>
+          <tr><td><span class="num">3</span></td><td>GPIO13, PIN12</td><td>NC</td><td>与模组LED连接</td><td><b style="color:#1565c0">VCC</b></td></tr>
+          <tr><td><span class="num">4</span></td><td>GND</td><td>共地</td><td>—</td><td><b style="color:#1565c0">VCC</b></td></tr>
+          <tr><td><span class="num">5</span></td><td>GPIO05, PIN24</td><td>IR.1</td><td>红外接收</td><td><b style="color:#1565c0">GND</b></td></tr>
+          <tr><td><span class="num">6</span></td><td>经R6接地</td><td>LED负</td><td>无功能</td><td><b style="color:#1565c0">GND</b></td></tr>
+          <tr><td><span class="num">7</span></td><td>VDDPST, PIN17,11</td><td>IR.3</td><td>红外供电</td><td>无</td></tr>
+        </tbody>
+      </table>
+      <div class="notes">
+        <b>双排读法：</b>左列 7 个镀锡焊点自上而下为 1~7；对侧只有第 3、4 行（VCC）与第 5、6 行（GND）有焊点，
+        第 1、2、7 行对侧为空，合计 7 + 4 = 11 点。照片有透视，两列看起来略有错位；
+        中间深色竖条是照片里原有的焊锡/金属条。
+      </div>
+    </div>
+    <div>
+      <svg viewBox="0 0 440 310" role="img" aria-label="双排 11 焊点示意">
+        <text x="150" y="28" fill="#e23b32" font-size="13" text-anchor="middle" font-weight="bold">信号列（7 点）</text>
+        <text x="330" y="28" fill="#1565c0" font-size="13" text-anchor="middle" font-weight="bold">对侧（4 点）</text>
+        <g font-size="12" text-anchor="middle">
+          <!-- 7 行 -->
+          <g>
+            <circle cx="150" cy="60" r="15" fill="#e23b32"/><text x="150" y="64" fill="#fff">1</text>
+            <circle cx="150" cy="97" r="15" fill="#e23b32"/><text x="150" y="101" fill="#fff">2</text>
+            <circle cx="150" cy="134" r="15" fill="#e23b32"/><text x="150" y="138" fill="#fff">3</text>
+            <circle cx="150" cy="171" r="15" fill="#e23b32"/><text x="150" y="175" fill="#fff">4</text>
+            <circle cx="150" cy="208" r="15" fill="#e23b32"/><text x="150" y="212" fill="#fff">5</text>
+            <circle cx="150" cy="245" r="15" fill="#e23b32"/><text x="150" y="249" fill="#fff">6</text>
+            <circle cx="150" cy="282" r="15" fill="#e23b32"/><text x="150" y="286" fill="#fff">7</text>
+          </g>
+          <!-- 对侧 4 点 -->
+          <g>
+            <rect x="285" y="122" width="90" height="24" rx="6" fill="#e8f1fd" stroke="#1565c0" stroke-width="2"/>
+            <text x="330" y="139" fill="#1565c0" font-weight="bold">VCC</text>
+            <rect x="285" y="159" width="90" height="24" rx="6" fill="#e8f1fd" stroke="#1565c0" stroke-width="2"/>
+            <text x="330" y="176" fill="#1565c0" font-weight="bold">VCC</text>
+            <rect x="285" y="196" width="90" height="24" rx="6" fill="#e8f1fd" stroke="#1565c0" stroke-width="2"/>
+            <text x="330" y="213" fill="#1565c0" font-weight="bold">GND</text>
+            <rect x="285" y="233" width="90" height="24" rx="6" fill="#e8f1fd" stroke="#1565c0" stroke-width="2"/>
+            <text x="330" y="250" fill="#1565c0" font-weight="bold">GND</text>
+          </g>
+          <g fill="#90a4ae" font-size="11">
+            <text x="330" y="64">无</text><text x="330" y="101">无</text><text x="330" y="286">无</text>
+          </g>
+        </g>
+        <line x1="215" y1="45" x2="215" y2="297" stroke="#dbe4ef" stroke-width="2" stroke-dasharray="6 5"/>
+        <text x="220" y="305" fill="#5b6e80" font-size="12" text-anchor="middle">合计 7 + 4 = 11 焊点</text>
+      </svg>
+      <div class="small">位置示意（按网页表格顺序），非实际比例。</div>
+    </div>
+  </div>
+</section>
+
+<div class="small">标注生成脚本：<code>annotate_points.py</code>（记录了各焊盘在照片中的像素坐标，可自行微调后重新生成）。</div>
+</div>
+
+<script>
+document.querySelectorAll('.tabs').forEach(function(tabs){
+  var group = tabs.dataset.group;
+  tabs.addEventListener('click', function(e){
+    var btn = e.target.closest('button'); if(!btn) return;
+    tabs.querySelectorAll('button').forEach(function(b){b.classList.remove('on')});
+    btn.classList.add('on');
+    ['Orig','Mark','Both'].forEach(function(k){
+      var el = document.getElementById(group + k);
+      if(el) el.classList.toggle('on', (group + k) === btn.dataset.v);
+    });
+  });
+});
+</script>
+</body>
+</html>
